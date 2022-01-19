@@ -14,6 +14,34 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/mobile-style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 </head>
 
 <body>
@@ -35,13 +63,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">HOW IT WORKS</a>
+              <a class="nav-link" href="#howitworks">HOW IT WORKS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">DOWNLOAD APP</a>
+              <a class="nav-link" href="#download">DOWNLOAD APP</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">SUPPORT</a>
+              <a class="nav-link" href="#support">SUPPORT</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">ABOUT US</a>
@@ -53,7 +81,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-md-7 col-sm-12  text-white">
-          <h1>WELCOME TO LOST AND PAWS</h1>
+          <h1>WELCOME TO <br> LOST AND PAWS</h1>
           <h6>MAKING LOST & FOUND EASY FOR YOU & YOUR PETS. </h6>
           <p>
             Software that saves time, saves the day, and keeps pets coming back.
@@ -77,11 +105,11 @@
               <img src="assets/pexels-photo-1904769.jpeg" alt="Dog" class="" />
             </div>
           </div>
-          <div class="col-md-6 col-12">
+          <div class="col-md-6 col-12" id="howitworks">
             <div class="panel text-left">
               <h1>HOW IT WORKS?</h1>
               <p class="pt-4">
-                Using the power of QR Code and Photos, with Lost and Paws it helps to manage lost and found pets in the community. QR Code as pets ID, to easily store the info of our beloved pets in the system. Register your pets to our system and put the Generated QR Code to your pet's collars.
+                Using the power of QR Code and Photos, with Lost and Paws it helps to manage lost and found pets in the community. QR Code as pets ID, to easily store the info of our beloved pets in the system. Register your pets to our system to get a QR Code and put the Generated QR Code to your pet's collars.
               </p>
               <p class="pt-4">
                 In case your pet get lost it's information can easily find by scanning its QR Code,with that anyone finds your pet can contact you instantly. In case that your pet is not registered who ever find your pet can report to our system and submit a found report. Same with the lost pets, if the pet is not registered who ever find your pet can report to our system and submit a lost report.
@@ -91,9 +119,9 @@
         </div>
       </div>
     </section>
-    <section class="section-3 container-fluid p-0 text-center">
+    <section class="section-3 container-fluid p-0 text-center" id="download">
       <div class="row">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12" >
           <h1>Download Our App!</h1>
           <p>
             Lost and Paws app is available for download for mobile. Just click below to get it on your device.
@@ -126,9 +154,9 @@
       </div>
     </section>
 
-    <section class="section-2 container-fluid p-0">
+    <section class="section-2 container-fluid p-0" id="support">
       <div class="purchase text-center">
-        <h1>Purchase Whatever You Want</h1>
+        <h1>Contact Us</h1>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.
         </p>
