@@ -45,336 +45,116 @@ $(document).ready(function(){
 </head>
 
 <body>
-  <header>
-    <div class="container-fluid p-0">
-      <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">
-          <img src="assets/logo.png"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fas fa-align-right text-light"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="mr-auto"></div>
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">HOME
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#howitworks">HOW IT WORKS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#download">DOWNLOAD APP</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#support">SUPPORT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#aboutus">ABOUT US</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-md-7 col-sm-12  text-white">
-          <h1>WELCOME TO <br> LOST AND PAWS</h1>
-          <h6>MAKING LOST & FOUND EASY FOR YOU & YOUR PETS. </h6>
-          <p>
-            Software that saves time, saves the day, and keeps pets coming back.
-          </p>
-          <button class="btn btn-light px-5 py-2 primary-btn">
-            Find Your Pet!
-          </button>
-        </div>
-        <div class="col-md-5 col-sm-12  h-25">
-          <img src="assets/header-img.png" alt="Pet" />
-        </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="section-1">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-6 col-12">
-            <div class="pray">
-              <img src="assets/pexels-photo-1904769.jpeg" alt="Dog" class="" />
+  <div class="row mx-2 mt-4">
+         <div class="col-md-3">
+            <div class="card h-100">
+               <div class="card-header black-vatican">Card Generator</div>
+               <div class="card-body">
+                  <div class="row mb-2">
+                     <div class="col-md-8 pe-0">
+                        <textarea id="channel" class="form-control black-vatican text-center shadow-none" rows="1" placeholder="channel"></textarea>
+                     </div>
+                     <div class="col-md pw-0">
+                        <textarea id="page" class="form-control black-vatican text-center shadow-none" rows="1" placeholder="page"></textarea>
+                     </div>
+                  </div>
+                  <button class="btn btn-outline-light block shadow-none mb-2" id="scrape">Scrape</button>
+                  <textarea id="bin" class="form-control mb-2 black-vatican text-center shadow-none" rows="3" placeholder="xxxxxx"></textarea>
+                  <div class="row">
+                     <div class="col-md">
+                        <button class="btn btn-md btn-outline-light block shadow-none" id="bin-format">Format</button>
+                     </div>
+                     <div class="col-md">
+                        <button class="btn btn-md btn-outline-light block shadow-none" id="generate">Generate</button>
+                     </div>
+                  </div>
+                 
+               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-12" id="howitworks">
-            <div class="panel text-left">
-              <h1>HOW IT WORKS?</h1>
-              <p class="pt-4">
-                Using the power of QR Code and Photos, with Lost and Paws it helps to manage lost and found pets in the community. QR Code as pets ID, to easily store the info of our beloved pets in the system. Register your pets to our system to get a QR Code and put the Generated QR Code to your pet's collars.
-              </p>
-              <p class="pt-4">
-                In case your pet get lost it's information can easily find by scanning its QR Code,with that anyone finds your pet can contact you instantly. In case that your pet is not registered who ever find your pet can report to our system and submit a found report. Same with the lost pets, if the pet is not registered who ever find your pet can report to our system and submit a lost report.
-              </p>
+         </div>
+         <div class="col-md">
+            <div class="card h-100">
+               <div class="card-header black-vatican">Credit Cards</div>
+               <div class="card-body h-100">
+                  <div class="mt-1 mx-1">
+                     <textarea class="form-control shadow-none mb-2" id="cards" rows="5" placeholder="xxxxxxxxxxxxxxxx|xx|xxxx|xxx"></textarea>
+                     <select id="gates" class="form-control shadow-none mb-2 black-vatican">
+                     <?php foreach ($apiname as $key => $apiname) {
+                        echo '<option value="'.$fname[$key].'">'.$apiname.'</option>';}?>
+                     </select>
+                     <div class="row mt-2">
+                        <div class="col pe-0">
+                           <button class="btn btn-outline-light block shadow-none" id="start">Start</button>
+                        </div>
+                        <div class="col pw-0">
+                           <button class="btn btn-outline-light block shadow-none" id="format">Format</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-      <section class="section-3 container-fluid p-0 text-center" id="download">
-        <div class="row">
-          <div class="col-md-12 col-sm-12" >
-            <h1>Download Our App!</h1>
-            <p>
-              Lost and Paws app is available for download for mobile. Just click below to get it on your device.
-            </p>
-          </div>
-        </div>
-        <div class="platform row">
-          <div class="col-md-6 col-sm-12 text-right">
-            <div class="desktop shadow-lg">
-              <div class="d-flex flex-row justify-content-center">
-                <i class="fas fa-desktop fa-3x py-2 pr-3"></i>
-                <div class="text text-left">
-                  <h3 class="pt-1 m-0">Desktop</h3>
-                  <p class="p-0 m-0">On Website Only</p>
-                </div>
-              </div>
+         </div>
+         <div class="col-md-3">
+            <div class="card h-100">
+               <div class="card-header text-center black-vatican">Black Vatican</div>
+               <div class="card-body">
+                  <img src="assets/img/blackvatican.png">
+               </div>
+               <div class="card-footer black-vatican">
+                  <center>
+                     <div class="px-1">
+                        <div class="row" id="counter">
+                           <div class="col">                  
+                              CVV : <span id="m-count">0</span>
+                           </div>
+                           <div class="col">   
+                              CCN : <span id="n-count">0</span>
+                           </div>
+                           <div class="col">
+                              DEAD : <span id="d-count">0</span>
+                           </div>
+                        </div>
+                     </div>
+                  </center>
+               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-sm-12 text-left">
-            <div class="desktop shadow-lg">
-              <div class="d-flex flex-row justify-content-center">
-                <i class="fas fa-mobile-alt fa-3x py-2 pr-3"></i>
-                <div class="text text-left">
-                  <h3 class="pt-1 m-0">Mobile</h3>
-                  <p class="p-0 m-0">On Play Store</p>
-                </div>
-              </div>
+         </div>
+      </div>
+      </div>
+      <div class="mx-3 mt-4">
+         <div class="card mb-3">
+            <div class="card-header black-vatican">
+               Auth Successful
+               <button class="btn btn-outline-light btn-sm float-right shadow-none" id="cvv-clear-btn"> Clear</button>
+               <button class="btn btn-outline-light btn-sm float-right shadow-none me-2" id="cvv-show-btn"> Show/Hide</button>
             </div>
-          </div>
-        </div>
-      </section>
-
-    <section class="contact" id="support">
-      <div class="purchase text-center">
-        <h1>Costumer Support</h1>
-        <p>
-          Got a question or need help? Send us a message and we will respond to you as soon as possible.
-        </p>
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-lg-6 mx-auto">
-            <div class="card">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="head text-center text-white py-3">
-                      <h3>Contact Us</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="form p-3">
-                  <div class="form-row my-5">
-                    <div class="col-lg-6">
-                      <input type="text" class="effect-1" placeholder="First Name">
-                      <span class="Focus-border"></span>
-                    </div>
-                    <div class="col-lg-6">
-                      <input type="text" class="effect-1" placeholder="Last Name">
-                      <span class="Focus-border"></span>
-                    </div>
-                  </div>
-                  <div class="form-row pb-4">
-                    <div class="col-lg-12">
-                      <input type="text" class="effect-1" placeholder="Email Address">
-                      <span class="Focus-border"></span>
-                    </div>
-                  </div>
-                  <div class="form-row pt-5">
-                    <div class="col-lg-12">
-                      <input type="text" class="effect-1" placeholder="Your Message">
-                      <span class="Focus-border"></span>
-                    </div>
-                  </div>
-                  <div class="form-row pt-4">
-                    <div class="col-lg-6">
-                      <p> <input type="checkbox" name="">I'm not a Bot.</p>
-                    </div>
-                    <div class="offset-2 col-lg-4">
-                      <button class="btn1">Send Message</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="card-body">
+               <div id="cvv-div"></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cover">
-      <div class="overlay"></div>
-        <div class="content text-center">
-          <h1>Some Features That Made Us Unique</h1>
-          <p>
-            Lost and found can be time consuming and frustrating.<br>Lost & Paws has a simple solution that reduces your work by 80%,<br>so you can focus on other responsibilities and keep both fur-parents and pets happy.
-          </p>
-        </div>
-      </div>
-      <div class="container-fluid text-center">
-        <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
-          <div class="rect">
-            <h1>3840</h1>
-            <p>Total Pets Registered</p>
-          </div>
-          <div class="rect">
-            <h1>2784</h1>
-            <p>Cat Found</p>
-          </div>
-          <div class="rect">
-            <h1>1056</h1>
-            <p>Dog Found</p>
-          </div>
-          <div class="rect">
-            <h1>7680</h1>
-            <p>Happy Fur-Parents</p>
-          </div>
-        </div>
-      </div>
-    </section>
-      
-
-
-      
-    
-    
-
-    <!-- Section 4 -->
-    <section class="section-4"  id="aboutus">
-      <div class="container text-center">
-        <h1 class="text-dark">ABOUT US</h1>
-        <p class="text-secondary">Developers | Members</p>
-      </div>
-      <div class="team row ">
-        <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-                <div class="card-img-top">
-                  <img src="assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt="">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Blalock Jolene</h3>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
-                  </p>
-                  <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
-                  <p class="text-black-50">CEO at Google</p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4 col-12">
-            <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
-                <div class="carousel-inner text-center">
-                  <div class="carousel-item active">
-                    <div class="card mr-2 d-inline-block shadow">
-                      <div class="card-img-top">
-                        <img src="assets/UI-face-1.jpg" class="img-fluid rounded-circle w-50 p-4" alt="">
-                      </div>
-                      <div class="card-body">
-                        <h3 class="card-title">Allen Agnes</h3>
-                        <p class="card-text">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                          minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
-                        </p>
-                        <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
-                        <p class="text-black-50">CEO at Google</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card  d-inline-block mr-2 shadow">
-                      <div class="card-img-top">
-                        <img src="assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt="">
-                      </div>
-                      <div class="card-body">
-                        <h3 class="card-title">Amiel Barbara</h3>
-                        <p class="card-text">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                          minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
-                        </p>
-                        <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
-                        <p class="text-black-50">CEO at Google</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-        </div>
-        </div>
-        <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-                <div class="card-img-top">
-                  <img src="assets/UI-face-4.jpg" class="img-fluid border-radius p-4" alt="">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Olivia Louis</h3>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
-                  </p>
-                  <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
-                  <p class="text-black-50">CEO at Google</p>
-                </div>
-              </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="container-fluid p-0">
-      <div class="row text-left">
-        <div class="col-md-5 col-sm-5">
-          <h4 class="text-light">LOST & PAWS</h4>
-          <p class="text-muted">Don’t waste any more of your valuable time on a lost and found process that doesn’t work. Register with LOST & PAWS today.</p>
-          <p class="pt-4 text-muted">Copyright ©2022 All rights reserved | This website is made with by
-            <span> Lost and Paws</span>
-          </p>
-        </div>
-        <div class="col-md-5 col-sm-12">
-          <h4 class="text-light">Newsletter</h4>
-          <p class="text-muted">Stay Updated</p>
-          <form class="form-inline">
-            <div class="col pl-0">
-              <div class="input-group pr-5">
-                <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-arrow-right"></i>
-                  </div>
-                </div>
-              </div>
+         </div>
+         <div class="card mb-3">
+            <div class="card-header black-vatican">
+               Not Enrolled
+               <button class="btn btn-outline-light btn-sm float-right shadow-none" id="ccn-clear-btn"> Clear</button>
+               <button class="btn btn-outline-light btn-sm float-right shadow-none me-2" id="ccn-show-btn"> Show/Hide</button>
             </div>
-          </form>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <h4 class="text-light">Follow Us</h4>
-          <p class="text-muted">Let us be social</p>
-          <div class="column text-light">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-youtube"></i>
-          </div>
-        </div>
+            <div class="card-body">
+               <div id="ccn-div">
+               </div>
+            </div>
+         </div>
+         <div class="card mb-3">
+            <div class="card-header black-vatican">
+               Enrolled
+               <button class="btn btn-outline-light btn-sm float-right shadow-none" id="dead-clear-btn"> Clear</button>
+               <button class="btn btn-outline-light btn-sm float-right shadow-none me-2" id="dead-show-btn"> Show/Hide</button>
+            </div>
+            <div class="card-body">
+               <div id="dead-div">
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
 </body>
 
 </html>
